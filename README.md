@@ -1,2 +1,2 @@
-# FrOG-Multi-Tangent-Forward-Gradients
-Code for the paper "Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients"
+# Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients
+Code and instructions for reproducibility will be added by the appendix submission deadline on Oct 17th.
