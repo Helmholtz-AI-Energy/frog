@@ -3,7 +3,7 @@ This repository contains the source code, instructions on how to reproduce our r
 
 ## Installation
 Our experiments were implemented using Python 3.9, newer versions of python might work but have not yet been tested.
-It is recommended to create a new virtual environment
+It is recommended to create a new virtual environment.
 Then, install the requirements from `requirements.txt`, e.g. with
 ```bash
 pip install -r requirements.txt
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 Here, we give instructions on how to reproduce the experimental results presented in Section 4.
 The outputs of all our experiments are automatically saved to `results/` and ordered by date and experiment.
 All the following scripts come with a command-line interface. 
-Use `--help` to find out more about additional parameters, e.g. to reduce the   
+Use `--help` to find out more about additional parameters, e.g. to reduce the number of samples, seeds, or epochs.
 
 #### Approximation Quality (Section 4.1)
 To evaluate the cosine similarity and norm of the forward gradients compared to the true gradient $\nabla f$, call
