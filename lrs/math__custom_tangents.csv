@@ -1,0 +1,15 @@
+function,n,gradient_approach,k,optimizer,lr,loss
+styblinski-tang,64,fg-mean,16,"FG(k=16,agg=mean,normalize=False,sampler=specific_angle_15)",0.026050732201274525,-2305.324951171875
+styblinski-tang,64,fg-mean,64,"FG(k=64,agg=mean,normalize=False,sampler=specific_angle_15)",0.026050732201274525,-2389.937255859375
+styblinski-tang,64,fg-mean,16,"FG(k=16,agg=mean,normalize=False,sampler=specific_angle_30)",0.03636534510523638,-2336.764404296875
+styblinski-tang,64,fg-mean,64,"FG(k=64,agg=mean,normalize=False,sampler=specific_angle_30)",0.03529607532965169,-2421.781494140625
+styblinski-tang,64,fg-mean,16,"FG(k=16,agg=mean,normalize=False,sampler=specific_angle_45)",0.026050732201274525,-2467.291015625
+styblinski-tang,64,fg-mean,64,"FG(k=64,agg=mean,normalize=False,sampler=specific_angle_45)",0.03529607532965169,-2478.361083984375
+styblinski-tang,64,fg-mean,16,"FG(k=16,agg=mean,normalize=False,sampler=specific_angle_60)",0.03529607532965169,-2506.634765625
+styblinski-tang,64,fg-mean,64,"FG(k=64,agg=mean,normalize=False,sampler=specific_angle_60)",0.03529607532965169,-2506.634765625
+styblinski-tang,64,fg-mean,16,"FG(k=16,agg=mean,normalize=False,sampler=specific_angle_75)",0.03529607532965169,-2506.634765625
+styblinski-tang,64,fg-mean,64,"FG(k=64,agg=mean,normalize=False,sampler=specific_angle_75)",0.03529607532965169,-2506.634765625
+styblinski-tang,64,fg-mean,16,"FG(k=16,agg=mean,normalize=False,sampler=specific_angle_90)",0.03529607532965169,-2506.634765625
+styblinski-tang,64,fg-mean,64,"FG(k=64,agg=mean,normalize=False,sampler=specific_angle_90)",0.03529607532965169,-2506.634765625
+styblinski-tang,64,frog,16,"FG(k=16,agg=orthogonal_projection,normalize=False,sampler=normal)",0.0018423636305031673,-2506.634765625
+styblinski-tang,64,frog,64,"FG(k=64,agg=orthogonal_projection,normalize=False,sampler=normal)",0.03529607532965169,-2506.634765625

@@ -1,0 +1,7 @@
+einops
+numpy
+pandas
+prefixed
+torch
+torchvision
+tqdm

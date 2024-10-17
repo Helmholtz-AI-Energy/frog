@@ -1,0 +1,9 @@
+einops
+numpy
+pandas
+prefixed
+torch
+torchvision
+tqdm
+mpi4py
+git+https://github.com/Helmholtz-AI-Energy/propulate.git
