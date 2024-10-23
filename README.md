@@ -1,3 +1,4 @@
+![](./docs/title.png)
 # Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients
 
 [![](https://img.shields.io/badge/License-MIT-8CB423)](./LICENSE)
