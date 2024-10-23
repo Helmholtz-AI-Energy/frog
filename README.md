@@ -1,5 +1,9 @@
 # Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients
 
+[![](https://img.shields.io/badge/License-MIT-8CB423)](./LICENSE)
+[![](https://img.shields.io/badge/Python-3.9+-8CB423)](https://www.python.org/downloads/)
+[![](https://img.shields.io/badge/Contact-katharina.fluegel%40kit.edu-8CB423)](mailto:katharina.fluegel@kit.edu)
+
 The gradients used to train neural networks are typically computed using backpropagation. 
 While an efficient way to obtain exact gradients, backpropagation is computationally expensive, hinders parallelization, and is biologically implausible. 
 Forward gradients are an approach to approximate the gradients from directional derivatives along random tangents computed by forward-mode automatic differentiation. 
