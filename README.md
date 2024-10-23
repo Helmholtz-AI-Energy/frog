@@ -43,6 +43,7 @@ This improves the approximation quality and enable the optimization of higher di
 This repository offers multiple different aggregation approaches, from simple sums and averages to the provably most accurate orthogonal projection.
 
 The following figure illustrates the orthogonal projection $P_U(\nabla f)$ of a gradient $\nabla f$ on the subspace $U$ spanned by the tangents $v_1$ and $v_2$.
+
 ![The forward gradient as orthogonal projection](./docs/forward_gradient_projection.png)
 
 
