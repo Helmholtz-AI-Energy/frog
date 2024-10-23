@@ -3,14 +3,49 @@
 [![](https://img.shields.io/badge/License-MIT-8CB423)](./LICENSE)
 [![](https://img.shields.io/badge/Python-3.9+-8CB423)](https://www.python.org/downloads/)
 [![](https://img.shields.io/badge/Contact-katharina.fluegel%40kit.edu-8CB423)](mailto:katharina.fluegel@kit.edu)
+[![](https://img.shields.io/badge/Preprint-arXiv:COMING.SOON-8CB423)](https://arxiv.org/)
 
-The gradients used to train neural networks are typically computed using backpropagation. 
-While an efficient way to obtain exact gradients, backpropagation is computationally expensive, hinders parallelization, and is biologically implausible. 
-Forward gradients are an approach to approximate the gradients from directional derivatives along random tangents computed by forward-mode automatic differentiation. 
-So far, research has focused on using a single tangent per step. 
-However, we find that aggregation over multiple tangents improves both approximation quality and optimization performance across various tasks.
+Forward gradients are an approach to approximate gradients from directional derivatives along random tangents.
+Multi-tangent forward gradients improve this approximation by aggregating over multiple tangents.
 
-This repository contains the source code, instructions on how to reproduce our results, and the learning rates as CSV for our paper "Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients", which provides an in-depth analysis of multi-tangent forward gradients and introduces an improved approach to combining the forward gradients from multiple tangents based on orthogonal projections. 
+This repository provides experimental code to analyze multi-tangent forward gradients along with instructions on how to reproduce the results of our paper "Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients".
+
+For more details, check out our preprint: *[coming soon]*
+
+If you find this repository useful, please cite our paper as: *[coming soon]*
+
+## Overview
+Gradient descent is a powerful to optimize differentiable functions and drives the training of most modern neural networks.
+The necessary gradients are typically computed using backpropagation.
+However, the alternating forward and backward passes make it biologically implausible and hinder parallelization.
+
+### What are Forward Gradients?
+
+Forward gradients are a way to approximate the gradient using forward-mode automatic differentiation (AD) along a specific tangent direction.
+This is more efficient than full forward-mode AD, which requires as many passes as parameters, while still being free of backward passes through the model.
+
+These forward gradients have multiple nice properties, for example:
+- A forward gradient is an unbiased estimator of the gradient for a random tangent $\sim\mathcal{N}(0, I_n)$
+- A forward gradient is always a descending direction
+- A forward gradient is always (anti-)parallel to it's corresponding tangent. 
+
+The following figure illustrates a forward gradient $g_v$ for the tangent $v$ and the gradient $\nabla f$.
+![A single tangent forward gradient](./docs/forward_gradient.png)
+
+However, as the dimension increases, the variance of the forward gradient increases, and with it, the approximation quality decreases.
+Essentially, the forward gradient limits the high-dimensional gradient to a single dimension, that of the tangent.
+This approximation of course depends strongly on how close the selected tangent is to the gradient.
+In high dimensional spaces, a random tangent is quite unlikely to be close to the gradient and is in fact expected to be near-orthogonal to the gradient.
+
+### Multi-Tangent Forward Gradients
+Multi-tangent forward gradients aggregate the forward gradients over multiple tangents.
+This improves the approximation quality and enable the optimization of higher dimensional problems.
+This repository offers multiple different aggregation approaches, from simple sums and averages to the provably most accurate orthogonal projection.
+
+The following figure illustrates the orthogonal projection $P_U(\nabla f)$ of a gradient $\nabla f$ on the subspace $U$ spanned by the tangents $v_1$ and $v_2$.
+![The forward gradient as orthogonal projection](./docs/forward_gradient_projection.png)
+
+
 
 ## Installation
 Our experiments were implemented using Python 3.9, newer versions of python might work but have not yet been tested.
