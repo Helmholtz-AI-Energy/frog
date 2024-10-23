@@ -1,5 +1,12 @@
 # Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients
-This repository contains the source code, instructions on how to reproduce our results, and the learning rates as CSV for the paper "Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients".
+
+The gradients used to train neural networks are typically computed using backpropagation. 
+While an efficient way to obtain exact gradients, backpropagation is computationally expensive, hinders parallelization, and is biologically implausible. 
+Forward gradients are an approach to approximate the gradients from directional derivatives along random tangents computed by forward-mode automatic differentiation. 
+So far, research has focused on using a single tangent per step. 
+However, we find that aggregation over multiple tangents improves both approximation quality and optimization performance across various tasks.
+
+This repository contains the source code, instructions on how to reproduce our results, and the learning rates as CSV for our paper "Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients", which provides an in-depth analysis of multi-tangent forward gradients and introduces an improved approach to combining the forward gradients from multiple tangents based on orthogonal projections. 
 
 ## Installation
 Our experiments were implemented using Python 3.9, newer versions of python might work but have not yet been tested.
