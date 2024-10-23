@@ -14,7 +14,11 @@ For more details, check out our preprint: *[coming soon]*
 
 If you find this repository useful, please cite our paper as: *[coming soon]*
 
-## Overview
+- [Intro to Multi-Tangent Forward Gradients](#intro-to-multi-tangent-forward-gradients)
+- [Installation](#installation)
+- [Usage](#usage)
+
+## Intro to Multi-Tangent Forward Gradients
 Gradient descent is a powerful to optimize differentiable functions and drives the training of most modern neural networks.
 The necessary gradients are typically computed using backpropagation.
 However, the alternating forward and backward passes make it biologically implausible and hinder parallelization.
