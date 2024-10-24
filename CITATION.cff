@@ -1,0 +1,34 @@
+title: >-
+  Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients
+abstract: >-
+  The gradients used to train neural networks are typically computed using backpropagation. While an efficient way
+  to obtain exact gradients, backpropagation is computationally expensive, hinders parallelization, and is
+  biologically implausible. Forward gradients are an approach to approximate the gradients from directional
+  derivatives along random tangents computed by forward-mode automatic differentiation. So far, research has focused
+  on using a single tangent per step. This paper provides an in-depth analysis of multi-tangent forward gradients
+  and introduces an improved approach to combining the forward gradients from multiple tangents based on orthogonal
+  projections. We demonstrate that increasing the number of tangents improves both approximation quality and
+  optimization performance across various tasks.
+type: preprint
+database: arXiv.org
+repository: arXiv
+url: http://arxiv.org/abs/2410.17764
+repository-code: https://github.com/Helmholtz-AI-Energy/frog
+keywords:
+  - Computer Science - Artificial Intelligence
+  - Computer Science - Machine Learning
+authors:
+  - family-names: Flügel
+    given-names: Katharina
+  - family-names: Coquelin
+    given-names: Daniel
+  - family-names: Weiel
+    given-names: Marie
+  - family-names: Streit
+    given-names: Achim
+  - family-names: Götz
+    given-names: Markus
+date-published: 2024-10-23
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.2410.17764

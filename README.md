@@ -4,16 +4,17 @@
 [![](https://img.shields.io/badge/License-MIT-8CB423)](./LICENSE)
 [![](https://img.shields.io/badge/Python-3.9+-8CB423)](https://www.python.org/downloads/)
 [![](https://img.shields.io/badge/Contact-katharina.fluegel%40kit.edu-8CB423)](mailto:katharina.fluegel@kit.edu)
-[![](https://img.shields.io/badge/Preprint-arXiv:COMING.SOON-8CB423)](https://arxiv.org/)
+[![](https://img.shields.io/badge/Preprint-arXiv:2410.17764-8CB423)](https://arxiv.org/abs/2410.17764)
 
 Forward gradients are an approach to approximate gradients from directional derivatives along random tangents.
 Multi-tangent forward gradients improve this approximation by aggregating over multiple tangents.
 
 This repository provides experimental code to analyze multi-tangent forward gradients along with instructions on how to reproduce the results of our paper "Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients".
 
-For more details, check out our preprint: *[coming soon]*
+For more details, check out our preprint: https://arxiv.org/abs/2410.17764
 
-If you find this repository useful, please cite our paper as: *[coming soon]*
+If you find this repository useful, please cite our paper as:
+> Flügel, Katharina, Daniel Coquelin, Marie Weiel, Achim Streit, and Markus Götz. 2024. “Beyond Backpropagation: Optimization with Multi-Tangent Forward Gradients.” arXiv. https://doi.org/10.48550/arXiv.2410.17764.
 
 - [Intro to Multi-Tangent Forward Gradients](#intro-to-multi-tangent-forward-gradients)
 - [Installation](#installation)
