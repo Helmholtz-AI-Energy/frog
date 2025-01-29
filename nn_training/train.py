@@ -25,12 +25,17 @@ class EarlyStopping:
         self.min_delta = min_delta
         self.steps_without_improvement = 0
         self.min_validation_loss = torch.inf
+        self.disabled = patience is None or patience <= 0
+        if self.disabled:
+            print(f'Early stopping patience = {patience} -> early stopping disabled.')
 
     def reset(self):
         self.steps_without_improvement = 0
         self.min_validation_loss = torch.inf
 
     def early_stop(self, validation_loss):
+        if self.disabled:
+            return False
         if validation_loss < self.min_validation_loss - self.min_delta:  # new minimum, reset counter
             self.min_validation_loss = validation_loss
             self.steps_without_improvement = 0
@@ -349,7 +354,7 @@ def train(config, print_model=False, track_additional_stats=False):
     device_specific_kwargs = {'num_workers': 1, 'pin_memory': True} if device.type == 'cuda' else {}
 
     train_loader, train_test_loader, val_loader, test_loader = datasets.get_dataloaders(
-        config, device_specific_kwargs, with_val_set=True)
+        config, device_specific_kwargs, with_val_set=not config.get('no_val_set', datatype=bool))
 
     epochs = config.get('epochs', datatype=int)
     model = models.get_model(config).to(device)
@@ -361,7 +366,8 @@ def train(config, print_model=False, track_additional_stats=False):
     fg_computation_mode = config.get_config('gradient_computation').get('fg_computation_mode')
     simulated_fg = fg_computation_mode == 'sim'
     trainer = Trainer(model, device, train_loader, train_test_loader, val_loader, test_loader, optimizer, lr_scheduler,
-                      config.gradient_computation, num_directions, simulated_fg, track_additional_stats)
+                      config.gradient_computation, num_directions, simulated_fg, track_additional_stats,
+                      early_stopping_patience=config.get('early_stopping_patience', datatype=int))
     with record_function("trainer.train"):
         results, stats = trainer.train(config.get('epochs', datatype=int), config.progress_bar)
 

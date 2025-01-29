@@ -44,6 +44,10 @@ class Configuration:
             self.set('output_name', args.output_name)
         if args.experiment_id is not None:
             self.set('experiment_id', args.experiment_id)
+        if args.early_stopping_patience is not None:
+            self.set('early_stopping_patience', args.early_stopping_patience)
+        if args.no_val_set is not None:
+            self.set('no_val_set', args.no_val_set)
 
         self.device = get_best_device() if args.device is None else args.device
         self.set('device', self.device)
@@ -156,5 +160,9 @@ def parse_cli_args():
     parser.add_argument('--num_directions', type=int,
                         help='Select specific number of random directions for forward gradients '
                              '(overwrites config file).')
+    parser.add_argument('--early_stopping_patience', type=int, default=10,
+                        help='Maximum number of epochs without improvement (early stopping disabled for <= 0).')
+    parser.add_argument('--no_val_set', action='store_true',
+                        help='Whether to use a validation set or use the entire training set for training.')
 
     return parser
